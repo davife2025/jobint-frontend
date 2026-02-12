@@ -84,7 +84,7 @@ const GuestApplicationForm = () => {
       payload.append('remotePreference', formData.remotePreference);
       
       // ✅ Backend expects 'file' field name
-      payload.append('file', resumeFile);
+      payload.append('cv', resumeFile);
 
       // ✅ Debug: Log what we're sending
       console.log('📤 Submitting application:');
