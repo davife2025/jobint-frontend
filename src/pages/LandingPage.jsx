@@ -55,7 +55,7 @@ function LandingPage() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <Briefcase className="w-8 h-8 text-blue-600" />
-              <span className="text-2xl font-bold text-gray-900">JobInt</span>
+              <span className="text-2xl font-bold text-gray-900">Jobclaw</span>
             </div>
             <div className="flex gap-4">
               <button
@@ -386,7 +386,7 @@ function LandingPage() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 JobInt. All rights reserved.</p>
+            <p>&copy; 2026 Jobclaw. All rights reserved.</p>
           </div>
         </div>
       </footer>
