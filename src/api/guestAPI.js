@@ -5,7 +5,7 @@ import api from '../services/api';
 const guestAPI = {
   submitApplication(formData) {
     // ✅ FIXED: Added /api/ prefix and proper headers for multipart/form-data
-    return api.post('/guest/submit', formData, {
+    return api.post('/api/guest/submit', formData, {
           timeout: 60000, // Increase to 60 seconds
       headers: {
         'Content-Type': 'multipart/form-data',
