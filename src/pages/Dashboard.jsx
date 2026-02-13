@@ -4,11 +4,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { applicationsAPI, interviewsAPI, jobsAPI, notificationsAPI } from '../services/api';
 import guestAPI from '../api/guestAPI';
-import { Calendar, TrendingUp, Briefcase, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react';
+import { Calendar, TrendingUp, Briefcase, AlertCircle, Sparkles } from 'lucide-react';
 import ActivityFeed from '../components/activityFeeds';
 import StatsCard from '../components/statsCard';
 import InterviewCard from '../components/interviewCard';
-import ProcessingDashboard from '../components/ProcessingDashboard';
+import ProcessingDashboard from '../components/processingDashboard';
 
 const Dashboard = () => {
   const { user, isGuestMode, getCurrentTrackingToken } = useAuth();

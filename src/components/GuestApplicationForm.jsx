@@ -100,7 +100,7 @@ const GuestApplicationForm = () => {
       const response = await guestAPI.submitApplication(payload);
       const { trackingToken, trackingUrl, userId } = response.data;
 
-      console.log('✅ Submission successful:', { trackingToken, userId });
+      console.log('✅ Submission successful:', { trackingToken, userId, trackingUrl });
 
       // ✅ CRITICAL: Store tracking token and enable guest mode
       addTrackingToken(trackingToken, {
