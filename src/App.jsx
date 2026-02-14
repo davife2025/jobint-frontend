@@ -1,9 +1,9 @@
-// src/App.jsx - UPDATED WITH GUEST ROUTES
-
+// src/App.jsx - WITH DARK MODE PROVIDER
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Web3Provider } from './contexts/web3Context';
+import { DarkModeProvider } from './contexts/DarkModeContext';
 
 // Pages
 import Login from './pages/Login';
@@ -26,7 +26,7 @@ function AppRoutes() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
       </div>
     );
@@ -34,7 +34,7 @@ function AppRoutes() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
         {(isAuthenticated || isGuestMode) && <Navbar />}
         
         <Routes>
@@ -51,10 +51,10 @@ function AppRoutes() {
             isAuthenticated ? <Navigate to="/dashboard" /> : <Register />
           } />
 
-          {/* Guest application route - accessible to everyone */}
+          {/* Guest application route */}
           <Route path="/guest-apply" element={<GuestApply />} />
 
-          {/* Protected routes - accessible by authenticated users OR guests */}
+          {/* Protected routes */}
           <Route path="/dashboard" element={
             <ProtectedRoute allowGuest={true}>
               <Dashboard />
@@ -73,7 +73,6 @@ function AppRoutes() {
             </ProtectedRoute>
           } />
           
-          {/* Settings requires full authentication */}
           <Route path="/settings" element={
             <ProtectedRoute allowGuest={false}>
               <Settings />
@@ -90,11 +89,13 @@ function AppRoutes() {
 
 function App() {
   return (
-    <AuthProvider>
-      <Web3Provider>
-        <AppRoutes />
-      </Web3Provider>
-    </AuthProvider>
+    <DarkModeProvider>
+      <AuthProvider>
+        <Web3Provider>
+          <AppRoutes />
+        </Web3Provider>
+      </AuthProvider>
+    </DarkModeProvider>
   );
 }
 
