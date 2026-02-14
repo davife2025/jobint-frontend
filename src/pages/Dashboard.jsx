@@ -8,7 +8,7 @@ import { Calendar, TrendingUp, Briefcase, AlertCircle, Sparkles } from 'lucide-r
 import ActivityFeed from '../components/activityFeeds';
 import StatsCard from '../components/statsCard';
 import InterviewCard from '../components/interviewCard';
-import ProcessingDashboard from '../components/processingDashboard';
+import ProcessingDashboard from '../components/ProcessingDashboard';
 
 const Dashboard = () => {
   const { user, isGuestMode, getCurrentTrackingToken } = useAuth();
