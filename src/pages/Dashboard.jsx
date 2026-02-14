@@ -3,8 +3,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import guestAPI from '../api/guestAPI';
 import { 
-  Briefcase, Calendar, Clock, TrendingUp, 
-  CheckCircle, XCircle, AlertCircle, FileText 
+  Briefcase, Calendar, TrendingUp, 
+  CheckCircle, AlertCircle, FileText 
 } from 'lucide-react';
 import StatsCard from '../components/statsCard';
 import InterviewCard from '../components/interviewCard';
